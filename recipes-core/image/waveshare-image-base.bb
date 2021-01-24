@@ -13,4 +13,4 @@ ENABLE_SPI_BUS = "1"
 
 IMAGE_FEATURES_append = " x11-base ssh-server-dropbear"
 
-IMAGE_INSTALL_append = " kernel-modules xserver-xorg xserver-xf86-config xterm xf86-input-evdev raspi2fb xf86-video-fbdev xinput-calibrator gpsd python3"
+IMAGE_INSTALL_append = " kernel-modules xserver-xorg xserver-xf86-config xterm xf86-input-evdev raspi2fb xf86-video-fbdev xinput-calibrator gpsd python3 switch-fbdevice"
