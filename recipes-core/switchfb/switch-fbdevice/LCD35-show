@@ -1,0 +1,13 @@
+#!/bin/bash
+
+echo "Start $0 ..."
+get_fbdev=`grep -rnw /etc/X11/xorg.conf -e "/dev"`
+fbdev=${get_fbdev//\"}
+if [ "${fbdev:38}" == "fb1" ]; then
+	echo "You are already on LCD"
+elif [ "${fbdev:38}" == "fb0" ]; then
+	echo "Switching to LCD..."
+	sed -i 's/fb0/fb1/g' /etc/X11/xorg.conf
+	echo "Rebooting ..."
+	reboot
+fi
