@@ -10,7 +10,7 @@ SRC_URI = "file://LCD-hdmi \
 
 do_install(){
 	install -d ${D}${bindir}
-	install -m 0755 ${S}/LCD_hdmi ${D}${bindir}
+	install -m 0755 ${S}/LCD-hdmi ${D}${bindir}
 	install -m 0755 ${S}/LCD35-show ${D}${bindir}
 }
 
