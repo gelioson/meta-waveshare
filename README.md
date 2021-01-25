@@ -5,7 +5,7 @@ Please see the corresponding sections below for details.
 
 
 # 3.5inch RPi LCD (A)
-
+![](https://i.postimg.cc/nrT8mXw3/Screenshot-20210124-005425.png)
 ## Dependencies
 
  - URI: [git://git.openembedded.org/openembedded-core](git://git.openembedded.org/openembedded-core)
