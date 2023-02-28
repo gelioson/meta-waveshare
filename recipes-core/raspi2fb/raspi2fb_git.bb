@@ -17,7 +17,7 @@ S = "${WORKDIR}/git"
 
 inherit cmake
 
-do_install_append () {
+do_install:append () {
     install -d ${D}${sysconfdir}/init.d
     install -m 0755 ${S}/raspi2fb.init.d ${D}${sysconfdir}/init.d/raspi2fb
 
