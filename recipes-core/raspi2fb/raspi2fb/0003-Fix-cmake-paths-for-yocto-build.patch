@@ -1,0 +1,36 @@
+From 694ee44bf3bc718f1d7ca1ad82e911b69d750633 Mon Sep 17 00:00:00 2001
+From: Gelioson <gelioson@gmail.com>
+Date: Fri, 10 Mar 2023 22:31:23 +0300
+Subject: [PATCH] Path fixes
+
+---
+ CMakeLists.txt | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 775b107..24e7eb4 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -4,8 +4,8 @@ project(raspi2fb)
+ set(CMAKE_BUILD_TYPE Release)
+ set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall")
+ 
+-set(BCM_HOST_INCLUDE_DIRS /opt/vc/include)
+-set(BCM_HOST_LIBRARY_DIRS /opt/vc/lib)
++set(BCM_HOST_INCLUDE_DIRS /usr/include)
++set(BCM_HOST_LIBRARY_DIRS /usr/lib)
+ set(BCM_HOST_LIBRARIES bcm_host)
+ 
+ find_package(PkgConfig)
+@@ -17,7 +17,7 @@ link_directories(${BCM_HOST_LIBRARY_DIRS} ${LIBBSD_LIBRARY_DIRS})
+ 
+ add_executable(${PROJECT_NAME} raspi2fb.c syslogUtilities.c)
+ 
+-target_link_libraries(${PROJECT_NAME} ${BCM_HOST_LIBRARIES} ${LIBBSD_LIBRARIES})
++target_link_libraries(${PROJECT_NAME} ${BCM_HOST_LIBRARIES} ${LIBBSD_LIBRARIES} bsd vchostif)
+ 
+ set_property(TARGET ${PROJECT_NAME} PROPERTY SKIP_BUILD_RPATH TRUE)
+ install(TARGETS ${PROJECT_NAME} RUNTIME DESTINATION bin)
+-- 
+2.34.1
+

@@ -5,15 +5,15 @@ LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/MIT;md5=0835ade698e0bcf8506ecda
 S = "${WORKDIR}"
 
 SRC_URI = "file://LCD-hdmi \
-	file://LCD35-show \
+	file://LCD35B-show-V2 \
 	"
 
 do_install(){
 	install -d ${D}${bindir}
 	install -m 0755 ${S}/LCD-hdmi ${D}${bindir}
-	install -m 0755 ${S}/LCD35-show ${D}${bindir}
+	install -m 0755 ${S}/LCD35B-show-V2 ${D}${bindir}
 }
 
-FILES_${PN} = "/usr/bin/"
+FILES:${PN} = "/usr/bin/"
 
-RDEPENDS_${PN} += "bash"
+RDEPENDS:${PN} += "bash"

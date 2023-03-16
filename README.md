@@ -4,19 +4,20 @@ This README file contains information on the contents of the meta-waveshare laye
 Please see the corresponding sections below for details.
 
 
-# 3.5inch RPi LCD (A)
-![](https://i.postimg.cc/nrT8mXw3/Screenshot-20210124-005425.png)
+# 3.5inch RPi LCD (B) V2
+![](https://www.waveshare.com/media/catalog/product/cache/1/image/800x800/9df78eab33525d08d6e5fb8d27136e95/3/_/3.5rbp-fs.jpg)
+![](https://www.waveshare.com/media/catalog/product/cache/1/image/800x800/9df78eab33525d08d6e5fb8d27136e95/3/_/3.5rbp-bs.jpg)
 ## Dependencies
 
  - URI: [git://git.openembedded.org/openembedded-core](git://git.openembedded.org/openembedded-core)
-	branch: dunfell
+	branch: kirkstone
  - URI: [git://git.openembedded.org/meta-openembedded](git://git.openembedded.org/meta-openembedded)
-	branch: dunfell
+	branch: kirkstone
 	meta-openembedded/meta-oe
 	meta-openembedded/meta-xfce
 	
  - URI: [git://git.yoctoproject.org/meta-raspberrypi](git://git.yoctoproject.org/meta-raspberrypi)
-	branch: dunfell
+	branch: kirkstone
 
 ## Patches
 
@@ -44,7 +45,7 @@ This script is provided by the switch-fbdevice recipe and included in the PATH v
 
 To switch back to the LCD screen, run the command: 
 
-    LCD35-show
+    LCD35B-show-V2
 
 ## 3. Touch screen calibration
 
@@ -57,4 +58,4 @@ The program is started by default on first boot, but you can calibrate the scree
 
 To include the Virtual Keyabord in the image. You can add this line in your local.conf or your image recipe. All dependencies are provided in this layer
 
-    IMAGE_INSTALL_append = " matchbox-keyboard"
+    IMAGE_INSTALL:append = " matchbox-keyboard"
